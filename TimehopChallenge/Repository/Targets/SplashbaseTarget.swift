@@ -8,11 +8,11 @@
 import Foundation
 import Moya
 
-enum Splashbase {
+enum SplashbaseTarget {
     case getStories
 }
 
-extension Splashbase: TargetType {
+extension SplashbaseTarget: TargetType {
     
     var baseURL: URL {
         return URL(string: "http://www.splashbase.co")!

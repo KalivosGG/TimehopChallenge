@@ -11,16 +11,40 @@ import RxSwift
 
 protocol Repository {
     
-    func getStories() -> Single<[Story]>
+    func getStories() -> Single<SplashbaseResponse>
+    
+    func getMedia(urlString: String) -> Single<Media>
     
 }
 
 class RemoteRepository: Repository {
     
-    final let provider = MoyaProvider<Splashbase>()
+    let splashTarget = MoyaProvider<SplashbaseTarget>()
+    let splashAWSTarget = MoyaProvider<SplashbaseAWSTarget>()
+        
+    func getStories() -> Single<SplashbaseResponse> {
+        splashTarget.rx
+            .request(.getStories)
+            .map(SplashbaseResponse.self)
+    }
     
-    func getStories() -> Single<[Story]> {
-        provider.rx.request(.getStories).map([Story].self)
+    func getMedia(urlString: String) -> Single<Media> {
+        return Single<Media>.create { [weak self] single in
+            let disposable = self?.splashAWSTarget
+                .request(.getMedia(urlString: urlString)) { result in
+                switch result {
+                case .success(let response):
+                    single(.success(Media(id: urlString.md5,
+                                          data: response.data)))
+                case .failure(let error):
+                    single(.error(error))
+                }
+            }
+            
+            return Disposables.create {
+                disposable?.cancel()
+            }
+        }
     }
     
 }
