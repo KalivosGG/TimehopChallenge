@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Media {
+struct Media: Hashable {
     let id: String
     let data: Data?
 }

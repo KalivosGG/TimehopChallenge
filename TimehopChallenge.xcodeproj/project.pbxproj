@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -29,6 +29,8 @@
 		EB98714C2661AC200008EF45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB98714A2661AC200008EF45 /* LaunchScreen.storyboard */; };
 		EB9871572661AC200008EF45 /* TimehopChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9871562661AC200008EF45 /* TimehopChallengeTests.swift */; };
 		EB9871622661AC200008EF45 /* TimehopChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9871612661AC200008EF45 /* TimehopChallengeUITests.swift */; };
+		EBD9E20E2667056D00109800 /* ObservableType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD9E20D2667056D00109800 /* ObservableType+Extension.swift */; };
+		EBD9E2142667208B00109800 /* Swime in Frameworks */ = {isa = PBXBuildFile; productRef = EBD9E2132667208B00109800 /* Swime */; };
 		FF5B37B8E962D2103B83CA52 /* Pods_TimehopChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9562D3CFA4492167BF40D0AB /* Pods_TimehopChallengeTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +86,7 @@
 		EB98715D2661AC200008EF45 /* TimehopChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimehopChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB9871612661AC200008EF45 /* TimehopChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimehopChallengeUITests.swift; sourceTree = "<group>"; };
 		EB9871632661AC200008EF45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBD9E20D2667056D00109800 /* ObservableType+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+Extension.swift"; sourceTree = "<group>"; };
 		F9DD1992977F19CD1B8D554A /* Pods-TimehopChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimehopChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-TimehopChallengeTests/Pods-TimehopChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBD9E2142667208B00109800 /* Swime in Frameworks */,
 				44899D300C7EBFFC5014ED20 /* Pods_TimehopChallenge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -170,6 +174,7 @@
 				EB7E32E52662827200B8CC10 /* Decodable+Extension.swift */,
 				EB5F4AC526640205007D189B /* FileManager+Extension.swift */,
 				EB5F4AD626642B66007D189B /* String+Extension.swift */,
+				EBD9E20D2667056D00109800 /* ObservableType+Extension.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -286,6 +291,9 @@
 			dependencies = (
 			);
 			name = TimehopChallenge;
+			packageProductDependencies = (
+				EBD9E2132667208B00109800 /* Swime */,
+			);
 			productName = TimehopChallenge;
 			productReference = EB98713C2661AC1F0008EF45 /* TimehopChallenge.app */;
 			productType = "com.apple.product-type.application";
@@ -361,6 +369,9 @@
 				Base,
 			);
 			mainGroup = EB9871332661AC1F0008EF45;
+			packageReferences = (
+				EBD9E2122667208B00109800 /* XCRemoteSwiftPackageReference "Swime" */,
+			);
 			productRefGroup = EB98713D2661AC1F0008EF45 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -526,6 +537,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB5F4ABB2663D2A6007D189B /* SplashbaseResponse.swift in Sources */,
+				EBD9E20E2667056D00109800 /* ObservableType+Extension.swift in Sources */,
 				EB9871442661AC1F0008EF45 /* MainViewController.swift in Sources */,
 				EB32F5362665D340001381D8 /* Media.swift in Sources */,
 				EB9871402661AC1F0008EF45 /* AppDelegate.swift in Sources */,
@@ -869,6 +881,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EBD9E2122667208B00109800 /* XCRemoteSwiftPackageReference "Swime" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sendyhalim/Swime";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.7;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EBD9E2132667208B00109800 /* Swime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EBD9E2122667208B00109800 /* XCRemoteSwiftPackageReference "Swime" */;
+			productName = Swime;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EB9871342661AC1F0008EF45 /* Project object */;
 }

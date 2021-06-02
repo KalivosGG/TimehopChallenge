@@ -19,7 +19,7 @@ class MainViewModel {
     
     private let repository: Repository
     private let disposeBag = DisposeBag()
-    private(set) var media = BehaviorRelay<[Media]>(value: [])
+    private(set) var id = BehaviorRelay<String>(value: "")
     
     init(repository: Repository) {
         self.repository = repository
@@ -35,28 +35,13 @@ class MainViewModel {
             .flatMap { Observable.from($0) }
             
             //Download data (media)
-            .flatMap { self.downloadMedia(story: $0) }
-            .retry(3)
+            .flatMap { self.downloadMedia(story: $0).asObservable().filterErrors() }
             
             //Save data to cache folder
-            .flatMap { self.saveMedia(media: $0) }
+            .flatMap { self.saveMedia(media: $0).asObservable().filterErrors() }
             
-            .subscribe(onNext: { media in
-                print(media)
-            }, onError: { error in
-                print(error.localizedDescription)
-            }, onCompleted: {
-                print("completed")
-                do {
-                    let files = try FileManager
-                        .default
-                        .contentsOfDirectory(atPath: FileManager.cacheDirectory.path)
-                    dump(files)
-                } catch {
-                    print(error)
-                }
-            }, onDisposed: {
-                print("disposed")
+            .subscribe(onNext: { id in
+                self.id.accept(id)
             })
             .disposed(by: disposeBag)
     }
@@ -67,18 +52,18 @@ class MainViewModel {
     }
     
     private func downloadMedia(story: Story) -> Single<Media> {
-        guard let urlString = story.url?.absoluteString else {
+        guard let largeUrlString = story.largeUrl?.absoluteString else {
             return Single<Media>.error(StoryError.invalidUrl)
         }
         
-        if !didDownloadMedia(fileName: urlString.md5) {
+        if !didDownloadMedia(fileName: largeUrlString.md5) {
             return Single<Media>.create { single in
-                single(.success(Media(id: urlString.md5, data: nil)))
+                single(.success(Media(id: largeUrlString.md5, data: nil)))
                 return Disposables.create()
             }
         }
         
-        return repository.getMedia(urlString: urlString)
+        return repository.getMedia(largeUrlString: largeUrlString).retry(3)
     }
     
     private func saveMedia(media: Media) -> Single<String> {
@@ -96,7 +81,7 @@ class MainViewModel {
                     single(.error(StoryError.fileCreationFailed))
                 }
             } else {
-                // Return success if file was already downloaded/created
+                // Return success if file already exists
                 single(.success(media.id))
             }
             

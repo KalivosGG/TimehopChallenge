@@ -13,7 +13,7 @@ protocol Repository {
     
     func getStories() -> Single<SplashbaseResponse>
     
-    func getMedia(urlString: String) -> Single<Media>
+    func getMedia(largeUrlString: String) -> Single<Media>
     
 }
 
@@ -28,13 +28,13 @@ class RemoteRepository: Repository {
             .map(SplashbaseResponse.self)
     }
     
-    func getMedia(urlString: String) -> Single<Media> {
+    func getMedia(largeUrlString: String) -> Single<Media> {
         return Single<Media>.create { [weak self] single in
             let disposable = self?.splashAWSTarget
-                .request(.getMedia(urlString: urlString)) { result in
+                .request(.getMedia(urlString: largeUrlString)) { result in
                 switch result {
                 case .success(let response):
-                    single(.success(Media(id: urlString.md5,
+                    single(.success(Media(id: largeUrlString.md5,
                                           data: response.data)))
                 case .failure(let error):
                     single(.error(error))

@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Swime
 
 class MainViewController: UIViewController {
 
@@ -28,28 +29,48 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        viewModel.images
-//            .asObservable()
-//            .subscribe(onNext: { [weak self] images in
-//                var posx = 0
-//                var posy = 0
-//                for (index, image) in images.enumerated() {
-//                    let imageView = UIImageView(image: image)
-//                    imageView.frame = CGRect(origin: CGPoint(x: posx, y: posy), size: CGSize(width: 100, height: 100))
-//                    imageView.contentMode = .scaleAspectFit
-//                    if posx > 300 {
-//                        posx = 0
-//                        posy += 100
-//                    } else {
-//                        posx += 100
-//                    }
-//                    
-//                    self?.stackView.insertSubview(imageView, at: index)
-//                }
-//            })
-//        .disposed(by: disposeBag)
+        viewModel.id
+            .skip(1)
+            .asObservable()
+            .subscribe(onNext: { [weak self] id in
+                let filePath = FileManager.cacheFilePath(id)
+                if let data = FileManager.default.contents(atPath: filePath) {
+                    let mimeType = Swime.mimeType(data: data)
+                    switch mimeType?.type {
+                    case .jpg, .png:
+                        self?.test(data: data)
+                    case .mp4, .avi, .mov, .wmv, .webm:
+                        // Other stuff
+                        print("Video found")
+                        break
+                    default:
+                        break
+                    }
+                }
+            })
+            .disposed(by: disposeBag)
 
         viewModel.getStories()
+    }
+    
+    // Test
+    var posx = 0
+    var posy = 0
+    
+    private func test(data: Data) {
+        let image = UIImage(data: data)
+  
+        let imageView = UIImageView(image: image)
+        imageView.frame = CGRect(origin: CGPoint(x: posx, y: posy), size: CGSize(width: 100, height: 100))
+        imageView.contentMode = .scaleAspectFit
+        if posx > 300 {
+            posx = 0
+            posy += 100
+        } else {
+            posx += 100
+        }
+
+        stackView.insertSubview(imageView, at: 0)
     }
     
 }
