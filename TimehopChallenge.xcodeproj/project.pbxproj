@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		13041E911B21930EF3140F7D /* Pods_TimehopChallenge_TimehopChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19E854F0AC08C4957A6C109C /* Pods_TimehopChallenge_TimehopChallengeUITests.framework */; };
 		44899D300C7EBFFC5014ED20 /* Pods_TimehopChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD55C5FECCCDC66ADA321977 /* Pods_TimehopChallenge.framework */; };
+		EB05DA3026694A7500CCA4D1 /* Swime in Frameworks */ = {isa = PBXBuildFile; productRef = EB05DA2F26694A7500CCA4D1 /* Swime */; };
+		EB05DA352669563300CCA4D1 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB05DA342669563300CCA4D1 /* PlayerView.swift */; };
+		EB05DA3A2669668B00CCA4D1 /* AVPlayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB05DA392669668B00CCA4D1 /* AVPlayer+Extension.swift */; };
 		EB32F5362665D340001381D8 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB32F5352665D340001381D8 /* Media.swift */; };
 		EB5F4AA82663CDFD007D189B /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5F4AA72663CDFD007D189B /* Container.swift */; };
 		EB5F4AB02663D12B007D189B /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB5F4AAF2663D12B007D189B /* MainViewController.xib */; };
@@ -30,7 +33,8 @@
 		EB9871572661AC200008EF45 /* TimehopChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9871562661AC200008EF45 /* TimehopChallengeTests.swift */; };
 		EB9871622661AC200008EF45 /* TimehopChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9871612661AC200008EF45 /* TimehopChallengeUITests.swift */; };
 		EBD9E20E2667056D00109800 /* ObservableType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD9E20D2667056D00109800 /* ObservableType+Extension.swift */; };
-		EBD9E2142667208B00109800 /* Swime in Frameworks */ = {isa = PBXBuildFile; productRef = EBD9E2132667208B00109800 /* Swime */; };
+		EBD9E228266736F300109800 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBD9E226266736F300109800 /* AVFoundation.framework */; };
+		EBD9E229266736F300109800 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBD9E227266736F300109800 /* AVKit.framework */; };
 		FF5B37B8E962D2103B83CA52 /* Pods_TimehopChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9562D3CFA4492167BF40D0AB /* Pods_TimehopChallengeTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +64,8 @@
 		B2212AD9120F5B2E9B8738B3 /* Pods-TimehopChallenge-TimehopChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimehopChallenge-TimehopChallengeUITests.release.xcconfig"; path = "Target Support Files/Pods-TimehopChallenge-TimehopChallengeUITests/Pods-TimehopChallenge-TimehopChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C6D9D952EAD62479043FCAAA /* Pods-TimehopChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimehopChallenge.release.xcconfig"; path = "Target Support Files/Pods-TimehopChallenge/Pods-TimehopChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		D0109D2A359619DC7A544271 /* Pods-TimehopChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimehopChallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-TimehopChallengeTests/Pods-TimehopChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EB05DA342669563300CCA4D1 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		EB05DA392669668B00CCA4D1 /* AVPlayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVPlayer+Extension.swift"; sourceTree = "<group>"; };
 		EB32F5352665D340001381D8 /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
 		EB5F4AA72663CDFD007D189B /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		EB5F4AAF2663D12B007D189B /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
@@ -87,6 +93,8 @@
 		EB9871612661AC200008EF45 /* TimehopChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimehopChallengeUITests.swift; sourceTree = "<group>"; };
 		EB9871632661AC200008EF45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBD9E20D2667056D00109800 /* ObservableType+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+Extension.swift"; sourceTree = "<group>"; };
+		EBD9E226266736F300109800 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		EBD9E227266736F300109800 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		F9DD1992977F19CD1B8D554A /* Pods-TimehopChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimehopChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-TimehopChallengeTests/Pods-TimehopChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,7 +103,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBD9E2142667208B00109800 /* Swime in Frameworks */,
+				EBD9E228266736F300109800 /* AVFoundation.framework in Frameworks */,
+				EBD9E229266736F300109800 /* AVKit.framework in Frameworks */,
+				EB05DA3026694A7500CCA4D1 /* Swime in Frameworks */,
 				44899D300C7EBFFC5014ED20 /* Pods_TimehopChallenge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,6 +145,8 @@
 		658689EDC7286AAB860806D2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EBD9E226266736F300109800 /* AVFoundation.framework */,
+				EBD9E227266736F300109800 /* AVKit.framework */,
 				AD55C5FECCCDC66ADA321977 /* Pods_TimehopChallenge.framework */,
 				19E854F0AC08C4957A6C109C /* Pods_TimehopChallenge_TimehopChallengeUITests.framework */,
 				9562D3CFA4492167BF40D0AB /* Pods_TimehopChallengeTests.framework */,
@@ -175,6 +187,7 @@
 				EB5F4AC526640205007D189B /* FileManager+Extension.swift */,
 				EB5F4AD626642B66007D189B /* String+Extension.swift */,
 				EBD9E20D2667056D00109800 /* ObservableType+Extension.swift */,
+				EB05DA392669668B00CCA4D1 /* AVPlayer+Extension.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -202,6 +215,7 @@
 			children = (
 				EB9871432661AC1F0008EF45 /* MainViewController.swift */,
 				EB5F4AAF2663D12B007D189B /* MainViewController.xib */,
+				EB05DA342669563300CCA4D1 /* PlayerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -292,7 +306,7 @@
 			);
 			name = TimehopChallenge;
 			packageProductDependencies = (
-				EBD9E2132667208B00109800 /* Swime */,
+				EB05DA2F26694A7500CCA4D1 /* Swime */,
 			);
 			productName = TimehopChallenge;
 			productReference = EB98713C2661AC1F0008EF45 /* TimehopChallenge.app */;
@@ -370,7 +384,7 @@
 			);
 			mainGroup = EB9871332661AC1F0008EF45;
 			packageReferences = (
-				EBD9E2122667208B00109800 /* XCRemoteSwiftPackageReference "Swime" */,
+				EB05DA2E26694A7500CCA4D1 /* XCRemoteSwiftPackageReference "Swime" */,
 			);
 			productRefGroup = EB98713D2661AC1F0008EF45 /* Products */;
 			projectDirPath = "";
@@ -539,6 +553,8 @@
 				EB5F4ABB2663D2A6007D189B /* SplashbaseResponse.swift in Sources */,
 				EBD9E20E2667056D00109800 /* ObservableType+Extension.swift in Sources */,
 				EB9871442661AC1F0008EF45 /* MainViewController.swift in Sources */,
+				EB05DA352669563300CCA4D1 /* PlayerView.swift in Sources */,
+				EB05DA3A2669668B00CCA4D1 /* AVPlayer+Extension.swift in Sources */,
 				EB32F5362665D340001381D8 /* Media.swift in Sources */,
 				EB9871402661AC1F0008EF45 /* AppDelegate.swift in Sources */,
 				EB7E32FD26633F5D00B8CC10 /* Repository.swift in Sources */,
@@ -883,7 +899,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		EBD9E2122667208B00109800 /* XCRemoteSwiftPackageReference "Swime" */ = {
+		EB05DA2E26694A7500CCA4D1 /* XCRemoteSwiftPackageReference "Swime" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/sendyhalim/Swime";
 			requirement = {
@@ -894,9 +910,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		EBD9E2132667208B00109800 /* Swime */ = {
+		EB05DA2F26694A7500CCA4D1 /* Swime */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = EBD9E2122667208B00109800 /* XCRemoteSwiftPackageReference "Swime" */;
+			package = EB05DA2E26694A7500CCA4D1 /* XCRemoteSwiftPackageReference "Swime" */;
 			productName = Swime;
 		};
 /* End XCSwiftPackageProductDependency section */

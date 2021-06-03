@@ -7,12 +7,11 @@ target 'TimehopChallenge' do
   pod 'Swinject'
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'SnapKit'
   
   target 'TimehopChallengeTests' do
     inherit! :search_paths
 
-    pod 'Nimble'
-    pod 'Quick'
     pod 'RxTest'
   end
 

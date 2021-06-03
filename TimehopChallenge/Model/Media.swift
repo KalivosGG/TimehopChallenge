@@ -7,7 +7,13 @@
 
 import Foundation
 
+enum MediaType {
+    case image
+    case video
+}
+
 struct Media: Hashable {
-    let id: String
-    let data: Data?
+    let id: Int
+    let type: MediaType
+    let url: URL?
 }

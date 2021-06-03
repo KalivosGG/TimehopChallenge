@@ -8,14 +8,23 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import Swime
+import AVKit
+import AVFoundation
+import SnapKit
 
 class MainViewController: UIViewController {
 
     private let viewModel: MainViewModel
     private let disposeBag = DisposeBag()
     
-    @IBOutlet weak var stackView: UIStackView!
+    let containerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        return view
+    }()
+    
+    let playerView = PlayerView()
+    var isPlaying = false
     
     init(viewModel: MainViewModel) {
         self.viewModel = viewModel
@@ -28,24 +37,20 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupPlayerView()
         
-        viewModel.id
-            .skip(1)
+        viewModel.media
+            .debug()
             .asObservable()
-            .subscribe(onNext: { [weak self] id in
-                let filePath = FileManager.cacheFilePath(id)
-                if let data = FileManager.default.contents(atPath: filePath) {
-                    let mimeType = Swime.mimeType(data: data)
-                    switch mimeType?.type {
-                    case .jpg, .png:
-                        self?.test(data: data)
-                    case .mp4, .avi, .mov, .wmv, .webm:
-                        // Other stuff
-                        print("Video found")
-                        break
-                    default:
-                        break
-                    }
+            .subscribe(onNext: { [weak self] media in
+                guard let media = media, let strongSelf = self else {
+                    return
+                }
+                
+                if let url = media.url,
+                   media.type == .video,
+                   !strongSelf.isPlaying {
+                    strongSelf.playVideo(url: url)
                 }
             })
             .disposed(by: disposeBag)
@@ -53,24 +58,22 @@ class MainViewController: UIViewController {
         viewModel.getStories()
     }
     
-    // Test
-    var posx = 0
-    var posy = 0
-    
-    private func test(data: Data) {
-        let image = UIImage(data: data)
-  
-        let imageView = UIImageView(image: image)
-        imageView.frame = CGRect(origin: CGPoint(x: posx, y: posy), size: CGSize(width: 100, height: 100))
-        imageView.contentMode = .scaleAspectFit
-        if posx > 300 {
-            posx = 0
-            posy += 100
-        } else {
-            posx += 100
+    private func setupPlayerView() {
+        view.backgroundColor = .white
+        view.addSubview(containerView)
+        containerView.snp.makeConstraints { maker in
+            maker.top.bottom.leading.trailing.equalToSuperview()
         }
-
-        stackView.insertSubview(imageView, at: 0)
+               
+        containerView.addSubview(playerView)
+        playerView.snp.makeConstraints { maker in
+            maker.top.bottom.leading.trailing.equalToSuperview()
+        }
+    }
+    
+    private func playVideo(url: URL) {
+        isPlaying = true
+        playerView.prepareToPlay(withUrl: url)
     }
     
 }

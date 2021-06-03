@@ -17,4 +17,10 @@ extension String {
             .joined()
     }
     
+    
+    func stringByAppendingPathExtension(ext: String) -> String? {
+        let nsSt = self as NSString
+        return nsSt.appendingPathExtension(ext)
+    }
+    
 }
