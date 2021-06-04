@@ -7,9 +7,6 @@
 
 import UIKit
 import RxSwift
-import RxCocoa
-import AVKit
-import AVFoundation
 import SnapKit
 
 class MainViewController: UIViewController {
@@ -20,8 +17,8 @@ class MainViewController: UIViewController {
     private let playerView = PlayerView()
     
     private let viewModel: MainViewModel
+    private let imageCache: ImageCacheType
     private let disposeBag = DisposeBag()
-    private let imageCache = NSCache<NSString, UIImage>()
     
     private var isImageHidden: Bool = false {
         didSet {
@@ -30,8 +27,9 @@ class MainViewController: UIViewController {
         }
     }
     
-    init(viewModel: MainViewModel) {
+    init(viewModel: MainViewModel, imageCache: ImageCacheType) {
         self.viewModel = viewModel
+        self.imageCache = imageCache
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -46,8 +44,9 @@ class MainViewController: UIViewController {
         
         viewModel.media
             .skip(1)
-            .debug()
+            //.debug()
             .asObservable()
+            .observeOn(MainScheduler())
             .subscribe(onNext: { [weak self] media in
                 guard let media = media else { return }
                 if media.type == .image {
@@ -113,20 +112,10 @@ class MainViewController: UIViewController {
     }
     
     private func showImage(url: URL) {
-        var image: UIImage? = nil
-        
-        if let cachedImage = imageCache.object(forKey: url.path as NSString) {
-            image = cachedImage
-        } else if let data = FileManager.default.contents(atPath: url.path),
-           let loadedImage = UIImage(data: data) {
-            imageCache.setObject(loadedImage, forKey: url.path as NSString)
-            image = loadedImage
-        }
-        
-        if let image = image {
+        if let cachedImage = imageCache.getImage(key: url.path) {
             isImageHidden = false
             playerView.pause()
-            imageView.image = image
+            imageView.image = cachedImage
         }
     }
     

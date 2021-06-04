@@ -13,16 +13,22 @@ extension Container {
     static let shared: Container = {
         let container = Container()
         
-        container.register(RemoteRepository.self) { _ -> RemoteRepository in
+        container.register(ImageCacheType.self){ _ in
+            ImageCache()
+        }.inObjectScope(.container)
+        
+        container.register(Repository.self) { _ in
             return RemoteRepository()
         }
         
         container.register(MainViewModel.self) { r in
-            return MainViewModel(repository: r.resolve(RemoteRepository.self)!)
+            return MainViewModel(repository: r.resolve(Repository.self)!,
+                                 imageCache: r.resolve(ImageCacheType.self)!)
         }
         
         container.register(MainViewController.self) { r in
-            return MainViewController(viewModel: r.resolve(MainViewModel.self)!)
+            return MainViewController(viewModel: r.resolve(MainViewModel.self)!,
+                                      imageCache: r.resolve(ImageCacheType.self)!)
         }
         
         return container

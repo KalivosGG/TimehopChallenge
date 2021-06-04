@@ -20,6 +20,8 @@
 		EB5F4AC0266400D3007D189B /* SplashbaseAWSTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5F4ABF266400D3007D189B /* SplashbaseAWSTarget.swift */; };
 		EB5F4AC626640205007D189B /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5F4AC526640205007D189B /* FileManager+Extension.swift */; };
 		EB5F4AD726642B66007D189B /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5F4AD626642B66007D189B /* String+Extension.swift */; };
+		EB7A4993266AB29100783EBE /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7A4992266AB29100783EBE /* ImageCache.swift */; };
+		EB7A4998266ABF3900783EBE /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7A4997266ABF3900783EBE /* UIImage+Extension.swift */; };
 		EB7E32DD2662807B00B8CC10 /* SplashbaseTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7E32DC2662807B00B8CC10 /* SplashbaseTarget.swift */; };
 		EB7E32E62662827200B8CC10 /* Decodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7E32E52662827200B8CC10 /* Decodable+Extension.swift */; };
 		EB7E32EC266282D900B8CC10 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7E32EB266282D900B8CC10 /* Story.swift */; };
@@ -74,6 +76,8 @@
 		EB5F4ABF266400D3007D189B /* SplashbaseAWSTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashbaseAWSTarget.swift; sourceTree = "<group>"; };
 		EB5F4AC526640205007D189B /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
 		EB5F4AD626642B66007D189B /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		EB7A4992266AB29100783EBE /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		EB7A4997266ABF3900783EBE /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		EB7E32DC2662807B00B8CC10 /* SplashbaseTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashbaseTarget.swift; sourceTree = "<group>"; };
 		EB7E32E52662827200B8CC10 /* Decodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable+Extension.swift"; sourceTree = "<group>"; };
 		EB7E32EB266282D900B8CC10 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
@@ -198,6 +202,8 @@
 				EB5F4AD626642B66007D189B /* String+Extension.swift */,
 				EBD9E20D2667056D00109800 /* ObservableType+Extension.swift */,
 				EB05DA392669668B00CCA4D1 /* AVPlayer+Extension.swift */,
+				EB7A4992266AB29100783EBE /* ImageCache.swift */,
+				EB7A4997266ABF3900783EBE /* UIImage+Extension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -574,9 +580,11 @@
 				EB5F4AC626640205007D189B /* FileManager+Extension.swift in Sources */,
 				EB7E32EC266282D900B8CC10 /* Story.swift in Sources */,
 				EB5F4AD726642B66007D189B /* String+Extension.swift in Sources */,
+				EB7A4993266AB29100783EBE /* ImageCache.swift in Sources */,
 				EB7E32E62662827200B8CC10 /* Decodable+Extension.swift in Sources */,
 				EB5F4AC0266400D3007D189B /* SplashbaseAWSTarget.swift in Sources */,
 				EB9871422661AC1F0008EF45 /* SceneDelegate.swift in Sources */,
+				EB7A4998266ABF3900783EBE /* UIImage+Extension.swift in Sources */,
 				EB5F4AA82663CDFD007D189B /* Container.swift in Sources */,
 				EB7E330E266344E200B8CC10 /* MainViewModel.swift in Sources */,
 			);

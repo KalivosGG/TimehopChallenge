@@ -22,16 +22,19 @@ enum StoryError: Error {
 class MainViewModel {
     
     private let repository: Repository
+    private let imageCache: ImageCacheType
     private let disposeBag = DisposeBag()
-    private let mediaSet = BehaviorRelay<OrderedSet<Media>>(value: [])
+    private var mediaSet = OrderedSet<Media>()
     private(set) var media = BehaviorRelay<Media?>(value: nil)
     
-    init(repository: Repository) {
+    private let queue = DispatchQueue(label: "mediaSet", attributes: .concurrent)
+    
+    init(repository: Repository, imageCache: ImageCacheType) {
         self.repository = repository
+        self.imageCache = imageCache
     }
     
     func getNextStory() {
-        let mediaSet = self.mediaSet.value
         guard let currentMedia = media.value,
               let currentIndex = mediaSet.firstIndex(of: currentMedia),
               currentIndex + 1 < mediaSet.count else {
@@ -43,7 +46,6 @@ class MainViewModel {
     }
     
     func getPreviousStory() {
-        let mediaSet = self.mediaSet.value
         guard let currentMedia = media.value,
               let currentIndex = mediaSet.firstIndex(of: currentMedia),
               currentIndex - 1 >= 0 else {
@@ -56,6 +58,7 @@ class MainViewModel {
     
     func getStories() {
         repository.getStories()
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .userInitiated))
             .retry(3)
             .map { $0.images }
             //.debug()
@@ -75,15 +78,31 @@ class MainViewModel {
                     .filterErrors()
             }
             
-            .subscribe(onNext: { media in
-                var mediaSet = self.mediaSet.value
-                mediaSet.append(media)
-                self.mediaSet.accept(mediaSet)
-                if (self.media.value == nil) {
-                    self.media.accept(media)
+            .subscribe(onNext: { [weak self] media in
+                guard let strongSelf = self else { return }
+               
+                strongSelf.cacheMedia(media: media)
+                
+                strongSelf.queue.async(flags: .barrier) {
+                    strongSelf.mediaSet.append(media)
+                }
+                
+                if strongSelf.media.value == nil {
+                    strongSelf.media.accept(media)
                 }
             })
             .disposed(by: disposeBag)
+    }
+    
+    private func cacheMedia(media: Media) {
+        let key = media.url.path
+        if media.type == .image {
+            if imageCache.getImage(key: key) == nil,
+               let data = FileManager.default.contents(atPath: key),
+               let image = UIImage(data: data) {
+                imageCache.saveImage(image: image, key: key)
+            }
+        }
     }
     
     private func getLocalFileUrl(md5: String) -> URL? {

@@ -26,9 +26,9 @@
 		<true/>
 		<key>NSExceptionDomains</key>
 		<dict>
-			<key>https://splashbase.s3.amazonaws.com</key>
-			<string></string>
 			<key>http://splashbase.co</key>
+			<string></string>
+			<key>https://splashbase.s3.amazonaws.com</key>
 			<string></string>
 		</dict>
 	</dict>
@@ -57,6 +57,8 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleDarkContent</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
