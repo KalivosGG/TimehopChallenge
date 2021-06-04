@@ -10,6 +10,7 @@ import RxSwift
 import RxCocoa
 import Moya
 import Swime
+import OrderedCollections
 
 enum StoryError: Error {
     case invalidUrl
@@ -22,10 +23,35 @@ class MainViewModel {
     
     private let repository: Repository
     private let disposeBag = DisposeBag()
+    private let mediaSet = BehaviorRelay<OrderedSet<Media>>(value: [])
     private(set) var media = BehaviorRelay<Media?>(value: nil)
     
     init(repository: Repository) {
         self.repository = repository
+    }
+    
+    func getNextStory() {
+        let mediaSet = self.mediaSet.value
+        guard let currentMedia = media.value,
+              let currentIndex = mediaSet.firstIndex(of: currentMedia),
+              currentIndex + 1 < mediaSet.count else {
+            return
+        }
+        let nextIndex = mediaSet.index(after: currentIndex)
+        let nextMedia = mediaSet[nextIndex]
+        media.accept(nextMedia)
+    }
+    
+    func getPreviousStory() {
+        let mediaSet = self.mediaSet.value
+        guard let currentMedia = media.value,
+              let currentIndex = mediaSet.firstIndex(of: currentMedia),
+              currentIndex - 1 >= 0 else {
+            return
+        }
+        let previousIndex = mediaSet.index(before: currentIndex)
+        let previousMedia: Media? = mediaSet[previousIndex]
+        media.accept(previousMedia)
     }
     
     func getStories() {
@@ -50,7 +76,12 @@ class MainViewModel {
             }
             
             .subscribe(onNext: { media in
-                self.media.accept(media)
+                var mediaSet = self.mediaSet.value
+                mediaSet.append(media)
+                self.mediaSet.accept(mediaSet)
+                if (self.media.value == nil) {
+                    self.media.accept(media)
+                }
             })
             .disposed(by: disposeBag)
     }

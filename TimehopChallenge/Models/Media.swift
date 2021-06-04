@@ -15,5 +15,5 @@ enum MediaType {
 struct Media: Hashable {
     let id: Int
     let type: MediaType
-    let url: URL?
+    let url: URL
 }

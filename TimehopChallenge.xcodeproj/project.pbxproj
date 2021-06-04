@@ -10,8 +10,9 @@
 		13041E911B21930EF3140F7D /* Pods_TimehopChallenge_TimehopChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19E854F0AC08C4957A6C109C /* Pods_TimehopChallenge_TimehopChallengeUITests.framework */; };
 		44899D300C7EBFFC5014ED20 /* Pods_TimehopChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD55C5FECCCDC66ADA321977 /* Pods_TimehopChallenge.framework */; };
 		EB05DA3026694A7500CCA4D1 /* Swime in Frameworks */ = {isa = PBXBuildFile; productRef = EB05DA2F26694A7500CCA4D1 /* Swime */; };
-		EB05DA352669563300CCA4D1 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB05DA342669563300CCA4D1 /* PlayerView.swift */; };
 		EB05DA3A2669668B00CCA4D1 /* AVPlayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB05DA392669668B00CCA4D1 /* AVPlayer+Extension.swift */; };
+		EB05DA4E2669A97300CCA4D1 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = EB05DA4D2669A97300CCA4D1 /* OrderedCollections */; };
+		EB05DA5E2669BF7700CCA4D1 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB05DA5D2669BF7700CCA4D1 /* PlayerView.swift */; };
 		EB32F5362665D340001381D8 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB32F5352665D340001381D8 /* Media.swift */; };
 		EB5F4AA82663CDFD007D189B /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5F4AA72663CDFD007D189B /* Container.swift */; };
 		EB5F4AB02663D12B007D189B /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB5F4AAF2663D12B007D189B /* MainViewController.xib */; };
@@ -64,8 +65,8 @@
 		B2212AD9120F5B2E9B8738B3 /* Pods-TimehopChallenge-TimehopChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimehopChallenge-TimehopChallengeUITests.release.xcconfig"; path = "Target Support Files/Pods-TimehopChallenge-TimehopChallengeUITests/Pods-TimehopChallenge-TimehopChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C6D9D952EAD62479043FCAAA /* Pods-TimehopChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimehopChallenge.release.xcconfig"; path = "Target Support Files/Pods-TimehopChallenge/Pods-TimehopChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		D0109D2A359619DC7A544271 /* Pods-TimehopChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimehopChallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-TimehopChallengeTests/Pods-TimehopChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
-		EB05DA342669563300CCA4D1 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		EB05DA392669668B00CCA4D1 /* AVPlayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVPlayer+Extension.swift"; sourceTree = "<group>"; };
+		EB05DA5D2669BF7700CCA4D1 /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		EB32F5352665D340001381D8 /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
 		EB5F4AA72663CDFD007D189B /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		EB5F4AAF2663D12B007D189B /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
@@ -103,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB05DA4E2669A97300CCA4D1 /* OrderedCollections in Frameworks */,
 				EBD9E228266736F300109800 /* AVFoundation.framework in Frameworks */,
 				EBD9E229266736F300109800 /* AVKit.framework in Frameworks */,
 				EB05DA3026694A7500CCA4D1 /* Swime in Frameworks */,
@@ -154,12 +156,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		EB5F4AA62663CDE4007D189B /* DI */ = {
+		EB05DA562669BF1A00CCA4D1 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				EB05DA5D2669BF7700CCA4D1 /* PlayerView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		EB5F4AA62663CDE4007D189B /* Dependency Injection */ = {
 			isa = PBXGroup;
 			children = (
 				EB5F4AA72663CDFD007D189B /* Container.swift */,
 			);
-			path = DI;
+			path = "Dependency Injection";
 			sourceTree = "<group>";
 		};
 		EB5F4ACA26640325007D189B /* Targets */ = {
@@ -180,7 +190,7 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
-		EB7E32E42662825D00B8CC10 /* Util */ = {
+		EB7E32E42662825D00B8CC10 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				EB7E32E52662827200B8CC10 /* Decodable+Extension.swift */,
@@ -189,43 +199,42 @@
 				EBD9E20D2667056D00109800 /* ObservableType+Extension.swift */,
 				EB05DA392669668B00CCA4D1 /* AVPlayer+Extension.swift */,
 			);
-			path = Util;
+			path = Utils;
 			sourceTree = "<group>";
 		};
-		EB7E32EA2662829600B8CC10 /* Model */ = {
+		EB7E32EA2662829600B8CC10 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				EB7E32EB266282D900B8CC10 /* Story.swift */,
 				EB5F4ABA2663D2A6007D189B /* SplashbaseResponse.swift */,
 				EB32F5352665D340001381D8 /* Media.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		EB7E32F32662845400B8CC10 /* Mock */ = {
+		EB7E32F32662845400B8CC10 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
 				EB7E32F72662848E00B8CC10 /* splashbase_mock.json */,
 			);
-			path = Mock;
+			path = Mocks;
 			sourceTree = "<group>";
 		};
-		EB7E330A2663449800B8CC10 /* View */ = {
+		EB7E330A2663449800B8CC10 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				EB9871432661AC1F0008EF45 /* MainViewController.swift */,
 				EB5F4AAF2663D12B007D189B /* MainViewController.xib */,
-				EB05DA342669563300CCA4D1 /* PlayerView.swift */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
-		EB7E330B2663449E00B8CC10 /* ViewModel */ = {
+		EB7E330B2663449E00B8CC10 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				EB7E330D266344E200B8CC10 /* MainViewModel.swift */,
 			);
-			path = ViewModel;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		EB9871332661AC1F0008EF45 = {
@@ -253,12 +262,13 @@
 		EB98713E2661AC1F0008EF45 /* TimehopChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				EB5F4AA62663CDE4007D189B /* DI */,
-				EB7E330B2663449E00B8CC10 /* ViewModel */,
-				EB7E330A2663449800B8CC10 /* View */,
-				EB7E32F32662845400B8CC10 /* Mock */,
-				EB7E32EA2662829600B8CC10 /* Model */,
-				EB7E32E42662825D00B8CC10 /* Util */,
+				EB05DA562669BF1A00CCA4D1 /* Components */,
+				EB5F4AA62663CDE4007D189B /* Dependency Injection */,
+				EB7E330B2663449E00B8CC10 /* ViewModels */,
+				EB7E330A2663449800B8CC10 /* Views */,
+				EB7E32F32662845400B8CC10 /* Mocks */,
+				EB7E32EA2662829600B8CC10 /* Models */,
+				EB7E32E42662825D00B8CC10 /* Utils */,
 				EB7E32DB2662802300B8CC10 /* Repository */,
 				EB98713F2661AC1F0008EF45 /* AppDelegate.swift */,
 				EB9871412661AC1F0008EF45 /* SceneDelegate.swift */,
@@ -307,6 +317,7 @@
 			name = TimehopChallenge;
 			packageProductDependencies = (
 				EB05DA2F26694A7500CCA4D1 /* Swime */,
+				EB05DA4D2669A97300CCA4D1 /* OrderedCollections */,
 			);
 			productName = TimehopChallenge;
 			productReference = EB98713C2661AC1F0008EF45 /* TimehopChallenge.app */;
@@ -385,6 +396,7 @@
 			mainGroup = EB9871332661AC1F0008EF45;
 			packageReferences = (
 				EB05DA2E26694A7500CCA4D1 /* XCRemoteSwiftPackageReference "Swime" */,
+				EB05DA4C2669A97300CCA4D1 /* XCRemoteSwiftPackageReference "swift-collections" */,
 			);
 			productRefGroup = EB98713D2661AC1F0008EF45 /* Products */;
 			projectDirPath = "";
@@ -553,8 +565,8 @@
 				EB5F4ABB2663D2A6007D189B /* SplashbaseResponse.swift in Sources */,
 				EBD9E20E2667056D00109800 /* ObservableType+Extension.swift in Sources */,
 				EB9871442661AC1F0008EF45 /* MainViewController.swift in Sources */,
-				EB05DA352669563300CCA4D1 /* PlayerView.swift in Sources */,
 				EB05DA3A2669668B00CCA4D1 /* AVPlayer+Extension.swift in Sources */,
+				EB05DA5E2669BF7700CCA4D1 /* PlayerView.swift in Sources */,
 				EB32F5362665D340001381D8 /* Media.swift in Sources */,
 				EB9871402661AC1F0008EF45 /* AppDelegate.swift in Sources */,
 				EB7E32FD26633F5D00B8CC10 /* Repository.swift in Sources */,
@@ -907,6 +919,14 @@
 				minimumVersion = 3.0.7;
 			};
 		};
+		EB05DA4C2669A97300CCA4D1 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -914,6 +934,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EB05DA2E26694A7500CCA4D1 /* XCRemoteSwiftPackageReference "Swime" */;
 			productName = Swime;
+		};
+		EB05DA4D2669A97300CCA4D1 /* OrderedCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EB05DA4C2669A97300CCA4D1 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = OrderedCollections;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
