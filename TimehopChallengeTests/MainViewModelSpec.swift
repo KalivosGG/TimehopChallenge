@@ -237,7 +237,7 @@ class MainViewModelSpec: QuickSpec {
 
             }
             
-            context("Fetching fails") {
+            context("fetching fails") {
                 container.register(FileHelper.self) { _ in
                     FileNotFoundFileHelperMock()
                 }
@@ -296,6 +296,71 @@ class MainViewModelSpec: QuickSpec {
                         expect(results.count).to(equal(1))
                         expect(results.first).to(equal([]))
                     }
+                }
+                
+            }
+            
+        }
+        
+        describe("getNextStory/getPreviousStory is invoked") {
+            
+            afterEach {
+                sut = nil
+            }
+
+            context("media is emited based on set order") {
+                container.register(FileHelper.self) { _ in
+                    SuccessFileHelperMock()
+                }
+                container.register(TargetRepository.self) { _ in
+                    SuccessStoriesRepositoryMock()
+                }
+                container.register(AWSTargetRepository.self) { _ in
+                    SuccessMediaRepositoryMock()
+                }
+                
+                sut = container.resolve(MainViewModel.self)
+                
+                let observer = testScheduler.createObserver(Media?.self)
+                
+                let mediaArray = getMediaMock()
+                let firstMedia = mediaArray.first
+                let set = OrderedSet<Media>(mediaArray)
+                sut.media.accept(firstMedia)
+                sut.mediaSet.accept(set)
+                
+                sut.media
+                    .skip(1)
+                    .subscribe(observer)
+                    .disposed(by: disposeBag)
+                
+                testScheduler.scheduleAt(0) {
+                    sut.getNextStory()
+                    sut.getPreviousStory()
+                    sut.getPreviousStory()
+                    sut.getNextStory()
+                    sut.getNextStory()
+                    sut.getNextStory()
+                    sut.getNextStory()
+                    sut.getPreviousStory()
+                    sut.getNextStory()
+                }
+                
+                testScheduler.start()
+                
+                it("emited values should match correct values") {
+                    let correctEvents = [
+                        mediaArray[1],
+                        mediaArray[0],
+                        mediaArray[1],
+                        mediaArray[2],
+                        mediaArray[3],
+                        mediaArray[2],
+                        mediaArray[3]
+                    ]
+                    
+                    let results = observer.events.compactMap { $0.value.element }
+                    expect(results).to(equal(correctEvents))
                 }
                 
             }

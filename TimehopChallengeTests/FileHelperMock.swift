@@ -9,21 +9,21 @@ import Foundation
 
 @testable import TimehopChallenge
 
-//class FileFoundFileHelperMock: FileHelper {
-//
-//    func findFile(directory: FileManager.SearchPathDirectory, name: String) -> URL? {
-//        return URL(string: name)
-//    }
-//
-//    func createFile(directory: FileManager.SearchPathDirectory, name: String, data: Data) -> URL? {
-//        return URL(string: name)
-//    }
-//
-//    func isStorageAvailable(directory: FileManager.SearchPathDirectory, data: Data) -> Bool {
-//        return true
-//    }
-//
-//}
+class SuccessFileHelperMock: FileHelper {
+
+    func findFile(directory: FileManager.SearchPathDirectory, name: String) -> URL? {
+        return URL(string: name)
+    }
+
+    func createFile(directory: FileManager.SearchPathDirectory, name: String, data: Data) -> URL? {
+        return URL(string: name)
+    }
+
+    func isStorageAvailable(directory: FileManager.SearchPathDirectory, data: Data) -> Bool {
+        return true
+    }
+
+}
 
 class FileNotFoundFileHelperMock: FileHelper {
     

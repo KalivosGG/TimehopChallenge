@@ -37,6 +37,15 @@ func getStoriesMock() -> [Story] {
     ]
 }
 
+func getMediaMock() -> [Media] {
+    return [
+        Media(id: 1234, type: .image, url: URL(string: "1234")!),
+        Media(id: 5555, type: .image, url: URL(string: "5555")!),
+        Media(id: 2680, type: .video, url: URL(string: "2680")!),
+        Media(id: 9999, type: .video, url: URL(string: "9999")!),
+    ]
+}
+
 class SuccessStoriesRepositoryMock: TargetRepository {
     func getStories() -> Single<SplashbaseResponse> {
         return Single.create { single in
