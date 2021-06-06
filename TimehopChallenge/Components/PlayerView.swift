@@ -45,15 +45,18 @@ class PlayerView: UIView {
     
     private var playerItem: AVPlayerItem?
 
-    private var assetPlayer: AVPlayer? {
+    private var queuePlayer: AVQueuePlayer? {
         didSet {
             DispatchQueue.main.async {
                 if let layer = self.layer as? AVPlayerLayer {
-                    layer.player = self.assetPlayer
+                    layer.player = self.queuePlayer
                 }
             }
         }
     }
+    
+    private var playerLooper: AVPlayerLooper?
+    
     private func startLoading(_ asset: AVURLAsset) {
         var error: NSError?
         let status: AVKeyValueStatus = asset.statusOfValue(forKey: "tracks", error: &error)
@@ -61,23 +64,27 @@ class PlayerView: UIView {
             let item = AVPlayerItem(asset: asset)
             playerItem = item
 
-            let player = AVPlayer(playerItem: item)
-            assetPlayer = player
+            let player = AVQueuePlayer(playerItem: item)
+            queuePlayer = player
+            
+            let looper = AVPlayerLooper(player: player, templateItem: item)
+            playerLooper = looper
+            
             player.play()
         }
     }
     
     func play() {
-        guard assetPlayer?.isPlaying == false else { return }
+        guard queuePlayer?.isPlaying == false else { return }
         DispatchQueue.main.async {
-            self.assetPlayer?.play()
+            self.queuePlayer?.play()
         }
     }
     
     func pause() {
-        guard assetPlayer?.isPlaying == true else { return }
+        guard queuePlayer?.isPlaying == true else { return }
         DispatchQueue.main.async {
-            self.assetPlayer?.pause()
+            self.queuePlayer?.pause()
         }
     }
     
@@ -85,7 +92,8 @@ class PlayerView: UIView {
         pause()
         urlAsset?.cancelLoading()
         urlAsset = nil
-        assetPlayer = nil
+        queuePlayer = nil
+        playerLooper = nil
     }
     
     deinit {
