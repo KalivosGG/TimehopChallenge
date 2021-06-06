@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		13041E911B21930EF3140F7D /* Pods_TimehopChallenge_TimehopChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19E854F0AC08C4957A6C109C /* Pods_TimehopChallenge_TimehopChallengeUITests.framework */; };
-		44899D300C7EBFFC5014ED20 /* Pods_TimehopChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD55C5FECCCDC66ADA321977 /* Pods_TimehopChallenge.framework */; };
+		0FB02774B6D0585511569398 /* Pods_TimehopChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9385CF9C2BDCF04CE72F27A /* Pods_TimehopChallenge.framework */; };
+		694F049C2C1A177FC956773C /* Pods_TimehopChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C59A89D2BD0AD9268809D9B /* Pods_TimehopChallengeTests.framework */; };
 		EB05DA3026694A7500CCA4D1 /* Swime in Frameworks */ = {isa = PBXBuildFile; productRef = EB05DA2F26694A7500CCA4D1 /* Swime */; };
 		EB05DA3A2669668B00CCA4D1 /* AVPlayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB05DA392669668B00CCA4D1 /* AVPlayer+Extension.swift */; };
 		EB05DA4E2669A97300CCA4D1 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = EB05DA4D2669A97300CCA4D1 /* OrderedCollections */; };
@@ -33,12 +33,15 @@
 		EB9871442661AC1F0008EF45 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9871432661AC1F0008EF45 /* MainViewController.swift */; };
 		EB9871492661AC200008EF45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB9871482661AC200008EF45 /* Assets.xcassets */; };
 		EB98714C2661AC200008EF45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB98714A2661AC200008EF45 /* LaunchScreen.storyboard */; };
-		EB9871572661AC200008EF45 /* TimehopChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9871562661AC200008EF45 /* TimehopChallengeTests.swift */; };
-		EB9871622661AC200008EF45 /* TimehopChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9871612661AC200008EF45 /* TimehopChallengeUITests.swift */; };
+		EBB4EA93266CF1B6007076CF /* FileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB4EA92266CF1B6007076CF /* FileHelper.swift */; };
+		EBB4EA9B266CFC78007076CF /* FileHelperMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB4EA9A266CFC78007076CF /* FileHelperMock.swift */; };
+		EBC1AFA9266BA9D500A05E06 /* MainViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC1AFA8266BA9D500A05E06 /* MainViewModelSpec.swift */; };
+		EBC1B01D266BEF5F00A05E06 /* RepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC1B01C266BEF5F00A05E06 /* RepositoryMock.swift */; };
+		EBC1B022266BF1E500A05E06 /* ImageCacheMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC1B021266BF1E500A05E06 /* ImageCacheMock.swift */; };
+		EBC1B03B266C367400A05E06 /* RepositorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC1B03A266C367400A05E06 /* RepositorySpec.swift */; };
 		EBD9E20E2667056D00109800 /* ObservableType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD9E20D2667056D00109800 /* ObservableType+Extension.swift */; };
 		EBD9E228266736F300109800 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBD9E226266736F300109800 /* AVFoundation.framework */; };
 		EBD9E229266736F300109800 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBD9E227266736F300109800 /* AVKit.framework */; };
-		FF5B37B8E962D2103B83CA52 /* Pods_TimehopChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9562D3CFA4492167BF40D0AB /* Pods_TimehopChallengeTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,24 +52,18 @@
 			remoteGlobalIDString = EB98713B2661AC1F0008EF45;
 			remoteInfo = TimehopChallenge;
 		};
-		EB98715E2661AC200008EF45 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EB9871342661AC1F0008EF45 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EB98713B2661AC1F0008EF45;
-			remoteInfo = TimehopChallenge;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		19E854F0AC08C4957A6C109C /* Pods_TimehopChallenge_TimehopChallengeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimehopChallenge_TimehopChallengeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		24C7D5EB79D84288A2D875C7 /* Pods-TimehopChallenge-TimehopChallengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimehopChallenge-TimehopChallengeUITests.debug.xcconfig"; path = "Target Support Files/Pods-TimehopChallenge-TimehopChallengeUITests/Pods-TimehopChallenge-TimehopChallengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		6588D4CF185E67486A1F97CB /* Pods-TimehopChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimehopChallenge.debug.xcconfig"; path = "Target Support Files/Pods-TimehopChallenge/Pods-TimehopChallenge.debug.xcconfig"; sourceTree = "<group>"; };
-		9562D3CFA4492167BF40D0AB /* Pods_TimehopChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimehopChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AD55C5FECCCDC66ADA321977 /* Pods_TimehopChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimehopChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B2212AD9120F5B2E9B8738B3 /* Pods-TimehopChallenge-TimehopChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimehopChallenge-TimehopChallengeUITests.release.xcconfig"; path = "Target Support Files/Pods-TimehopChallenge-TimehopChallengeUITests/Pods-TimehopChallenge-TimehopChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
-		C6D9D952EAD62479043FCAAA /* Pods-TimehopChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimehopChallenge.release.xcconfig"; path = "Target Support Files/Pods-TimehopChallenge/Pods-TimehopChallenge.release.xcconfig"; sourceTree = "<group>"; };
-		D0109D2A359619DC7A544271 /* Pods-TimehopChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimehopChallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-TimehopChallengeTests/Pods-TimehopChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		029F321C098BAE057CD30888 /* Pods-TimehopChallenge-TimehopChallengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimehopChallenge-TimehopChallengeUITests.debug.xcconfig"; path = "Target Support Files/Pods-TimehopChallenge-TimehopChallengeUITests/Pods-TimehopChallenge-TimehopChallengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5382DB4220ED069C7C0FDACB /* Pods-TimehopChallenge-TimehopChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimehopChallenge-TimehopChallengeUITests.release.xcconfig"; path = "Target Support Files/Pods-TimehopChallenge-TimehopChallengeUITests/Pods-TimehopChallenge-TimehopChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6E36B289C940D2141D3A3CF3 /* Pods_TimehopChallenge_TimehopChallengeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimehopChallenge_TimehopChallengeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C59A89D2BD0AD9268809D9B /* Pods_TimehopChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimehopChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFD9EBFE81AAEE618B9EC94F /* Pods-TimehopChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimehopChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-TimehopChallengeTests/Pods-TimehopChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
+		D9385CF9C2BDCF04CE72F27A /* Pods_TimehopChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimehopChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC0B29DE5D7A1201B1B9F72E /* Pods-TimehopChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimehopChallenge.debug.xcconfig"; path = "Target Support Files/Pods-TimehopChallenge/Pods-TimehopChallenge.debug.xcconfig"; sourceTree = "<group>"; };
+		E093E4B91B81E1F1194E81A9 /* Pods-TimehopChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimehopChallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-TimehopChallengeTests/Pods-TimehopChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EAC84D26BF637707E775F079 /* Pods-TimehopChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimehopChallenge.release.xcconfig"; path = "Target Support Files/Pods-TimehopChallenge/Pods-TimehopChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		EB05DA392669668B00CCA4D1 /* AVPlayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVPlayer+Extension.swift"; sourceTree = "<group>"; };
 		EB05DA5D2669BF7700CCA4D1 /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		EB32F5352665D340001381D8 /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
@@ -92,15 +89,16 @@
 		EB98714B2661AC200008EF45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EB98714D2661AC200008EF45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB9871522661AC200008EF45 /* TimehopChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimehopChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EB9871562661AC200008EF45 /* TimehopChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimehopChallengeTests.swift; sourceTree = "<group>"; };
 		EB9871582661AC200008EF45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EB98715D2661AC200008EF45 /* TimehopChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimehopChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EB9871612661AC200008EF45 /* TimehopChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimehopChallengeUITests.swift; sourceTree = "<group>"; };
-		EB9871632661AC200008EF45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBB4EA92266CF1B6007076CF /* FileHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileHelper.swift; sourceTree = "<group>"; };
+		EBB4EA9A266CFC78007076CF /* FileHelperMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileHelperMock.swift; sourceTree = "<group>"; };
+		EBC1AFA8266BA9D500A05E06 /* MainViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelSpec.swift; sourceTree = "<group>"; };
+		EBC1B01C266BEF5F00A05E06 /* RepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryMock.swift; sourceTree = "<group>"; };
+		EBC1B021266BF1E500A05E06 /* ImageCacheMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheMock.swift; sourceTree = "<group>"; };
+		EBC1B03A266C367400A05E06 /* RepositorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositorySpec.swift; sourceTree = "<group>"; };
 		EBD9E20D2667056D00109800 /* ObservableType+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+Extension.swift"; sourceTree = "<group>"; };
 		EBD9E226266736F300109800 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		EBD9E227266736F300109800 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
-		F9DD1992977F19CD1B8D554A /* Pods-TimehopChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimehopChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-TimehopChallengeTests/Pods-TimehopChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +110,7 @@
 				EBD9E228266736F300109800 /* AVFoundation.framework in Frameworks */,
 				EBD9E229266736F300109800 /* AVKit.framework in Frameworks */,
 				EB05DA3026694A7500CCA4D1 /* Swime in Frameworks */,
-				44899D300C7EBFFC5014ED20 /* Pods_TimehopChallenge.framework in Frameworks */,
+				0FB02774B6D0585511569398 /* Pods_TimehopChallenge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,15 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF5B37B8E962D2103B83CA52 /* Pods_TimehopChallengeTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EB98715A2661AC200008EF45 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				13041E911B21930EF3140F7D /* Pods_TimehopChallenge_TimehopChallengeUITests.framework in Frameworks */,
+				694F049C2C1A177FC956773C /* Pods_TimehopChallengeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,12 +128,12 @@
 		062071B0B2B690845CCF8D72 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6588D4CF185E67486A1F97CB /* Pods-TimehopChallenge.debug.xcconfig */,
-				C6D9D952EAD62479043FCAAA /* Pods-TimehopChallenge.release.xcconfig */,
-				24C7D5EB79D84288A2D875C7 /* Pods-TimehopChallenge-TimehopChallengeUITests.debug.xcconfig */,
-				B2212AD9120F5B2E9B8738B3 /* Pods-TimehopChallenge-TimehopChallengeUITests.release.xcconfig */,
-				D0109D2A359619DC7A544271 /* Pods-TimehopChallengeTests.debug.xcconfig */,
-				F9DD1992977F19CD1B8D554A /* Pods-TimehopChallengeTests.release.xcconfig */,
+				DC0B29DE5D7A1201B1B9F72E /* Pods-TimehopChallenge.debug.xcconfig */,
+				EAC84D26BF637707E775F079 /* Pods-TimehopChallenge.release.xcconfig */,
+				029F321C098BAE057CD30888 /* Pods-TimehopChallenge-TimehopChallengeUITests.debug.xcconfig */,
+				5382DB4220ED069C7C0FDACB /* Pods-TimehopChallenge-TimehopChallengeUITests.release.xcconfig */,
+				E093E4B91B81E1F1194E81A9 /* Pods-TimehopChallengeTests.debug.xcconfig */,
+				BFD9EBFE81AAEE618B9EC94F /* Pods-TimehopChallengeTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -153,9 +143,9 @@
 			children = (
 				EBD9E226266736F300109800 /* AVFoundation.framework */,
 				EBD9E227266736F300109800 /* AVKit.framework */,
-				AD55C5FECCCDC66ADA321977 /* Pods_TimehopChallenge.framework */,
-				19E854F0AC08C4957A6C109C /* Pods_TimehopChallenge_TimehopChallengeUITests.framework */,
-				9562D3CFA4492167BF40D0AB /* Pods_TimehopChallengeTests.framework */,
+				D9385CF9C2BDCF04CE72F27A /* Pods_TimehopChallenge.framework */,
+				6E36B289C940D2141D3A3CF3 /* Pods_TimehopChallenge_TimehopChallengeUITests.framework */,
+				8C59A89D2BD0AD9268809D9B /* Pods_TimehopChallengeTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -202,7 +192,6 @@
 				EB5F4AD626642B66007D189B /* String+Extension.swift */,
 				EBD9E20D2667056D00109800 /* ObservableType+Extension.swift */,
 				EB05DA392669668B00CCA4D1 /* AVPlayer+Extension.swift */,
-				EB7A4992266AB29100783EBE /* ImageCache.swift */,
 				EB7A4997266ABF3900783EBE /* UIImage+Extension.swift */,
 			);
 			path = Utils;
@@ -248,7 +237,6 @@
 			children = (
 				EB98713E2661AC1F0008EF45 /* TimehopChallenge */,
 				EB9871552661AC200008EF45 /* TimehopChallengeTests */,
-				EB9871602661AC200008EF45 /* TimehopChallengeUITests */,
 				EB98713D2661AC1F0008EF45 /* Products */,
 				062071B0B2B690845CCF8D72 /* Pods */,
 				658689EDC7286AAB860806D2 /* Frameworks */,
@@ -260,7 +248,6 @@
 			children = (
 				EB98713C2661AC1F0008EF45 /* TimehopChallenge.app */,
 				EB9871522661AC200008EF45 /* TimehopChallengeTests.xctest */,
-				EB98715D2661AC200008EF45 /* TimehopChallengeUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -268,6 +255,7 @@
 		EB98713E2661AC1F0008EF45 /* TimehopChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				EBC1B04A266C80DA00A05E06 /* Services */,
 				EB05DA562669BF1A00CCA4D1 /* Components */,
 				EB5F4AA62663CDE4007D189B /* Dependency Injection */,
 				EB7E330B2663449E00B8CC10 /* ViewModels */,
@@ -288,19 +276,23 @@
 		EB9871552661AC200008EF45 /* TimehopChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
-				EB9871562661AC200008EF45 /* TimehopChallengeTests.swift */,
+				EBC1B01C266BEF5F00A05E06 /* RepositoryMock.swift */,
+				EBC1B021266BF1E500A05E06 /* ImageCacheMock.swift */,
+				EBB4EA9A266CFC78007076CF /* FileHelperMock.swift */,
 				EB9871582661AC200008EF45 /* Info.plist */,
+				EBC1AFA8266BA9D500A05E06 /* MainViewModelSpec.swift */,
+				EBC1B03A266C367400A05E06 /* RepositorySpec.swift */,
 			);
 			path = TimehopChallengeTests;
 			sourceTree = "<group>";
 		};
-		EB9871602661AC200008EF45 /* TimehopChallengeUITests */ = {
+		EBC1B04A266C80DA00A05E06 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				EB9871612661AC200008EF45 /* TimehopChallengeUITests.swift */,
-				EB9871632661AC200008EF45 /* Info.plist */,
+				EB7A4992266AB29100783EBE /* ImageCache.swift */,
+				EBB4EA92266CF1B6007076CF /* FileHelper.swift */,
 			);
-			path = TimehopChallengeUITests;
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,11 +302,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EB9871662661AC200008EF45 /* Build configuration list for PBXNativeTarget "TimehopChallenge" */;
 			buildPhases = (
-				2D1421C27D53FCDF15610639 /* [CP] Check Pods Manifest.lock */,
+				33FAFED38C0ABD2704FEF5E8 /* [CP] Check Pods Manifest.lock */,
 				EB9871382661AC1F0008EF45 /* Sources */,
 				EB9871392661AC1F0008EF45 /* Frameworks */,
 				EB98713A2661AC1F0008EF45 /* Resources */,
-				F61303158A116DC4A2D8444A /* [CP] Embed Pods Frameworks */,
+				90561B4E002070E9C580E811 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -333,11 +325,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EB9871692661AC200008EF45 /* Build configuration list for PBXNativeTarget "TimehopChallengeTests" */;
 			buildPhases = (
-				2846773471D858E9756CFB4A /* [CP] Check Pods Manifest.lock */,
+				4C461BA55D75640800E6BEDE /* [CP] Check Pods Manifest.lock */,
 				EB98714E2661AC200008EF45 /* Sources */,
 				EB98714F2661AC200008EF45 /* Frameworks */,
 				EB9871502661AC200008EF45 /* Resources */,
-				1372CDA670CD1864E7C075EB /* [CP] Embed Pods Frameworks */,
+				755AF3A17DFF0A0E4262D5DB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -348,26 +340,6 @@
 			productName = TimehopChallengeTests;
 			productReference = EB9871522661AC200008EF45 /* TimehopChallengeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		EB98715C2661AC200008EF45 /* TimehopChallengeUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = EB98716C2661AC200008EF45 /* Build configuration list for PBXNativeTarget "TimehopChallengeUITests" */;
-			buildPhases = (
-				17B75E6EB6E5140814CE7467 /* [CP] Check Pods Manifest.lock */,
-				EB9871592661AC200008EF45 /* Sources */,
-				EB98715A2661AC200008EF45 /* Frameworks */,
-				EB98715B2661AC200008EF45 /* Resources */,
-				CEF3197B65CEB3C2B3270E68 /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				EB98715F2661AC200008EF45 /* PBXTargetDependency */,
-			);
-			name = TimehopChallengeUITests;
-			productName = TimehopChallengeUITests;
-			productReference = EB98715D2661AC200008EF45 /* TimehopChallengeUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -382,10 +354,6 @@
 						CreatedOnToolsVersion = 12.3;
 					};
 					EB9871512661AC200008EF45 = {
-						CreatedOnToolsVersion = 12.3;
-						TestTargetID = EB98713B2661AC1F0008EF45;
-					};
-					EB98715C2661AC200008EF45 = {
 						CreatedOnToolsVersion = 12.3;
 						TestTargetID = EB98713B2661AC1F0008EF45;
 					};
@@ -410,7 +378,6 @@
 			targets = (
 				EB98713B2661AC1F0008EF45 /* TimehopChallenge */,
 				EB9871512661AC200008EF45 /* TimehopChallengeTests */,
-				EB98715C2661AC200008EF45 /* TimehopChallengeUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -434,78 +401,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EB98715B2661AC200008EF45 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1372CDA670CD1864E7C075EB /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TimehopChallengeTests/Pods-TimehopChallengeTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TimehopChallengeTests/Pods-TimehopChallengeTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TimehopChallengeTests/Pods-TimehopChallengeTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		17B75E6EB6E5140814CE7467 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TimehopChallenge-TimehopChallengeUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2846773471D858E9756CFB4A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TimehopChallengeTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2D1421C27D53FCDF15610639 /* [CP] Check Pods Manifest.lock */ = {
+		33FAFED38C0ABD2704FEF5E8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -527,24 +426,46 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CEF3197B65CEB3C2B3270E68 /* [CP] Embed Pods Frameworks */ = {
+		4C461BA55D75640800E6BEDE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TimehopChallenge-TimehopChallengeUITests/Pods-TimehopChallenge-TimehopChallengeUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TimehopChallenge-TimehopChallengeUITests/Pods-TimehopChallenge-TimehopChallengeUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TimehopChallengeTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TimehopChallenge-TimehopChallengeUITests/Pods-TimehopChallenge-TimehopChallengeUITests-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F61303158A116DC4A2D8444A /* [CP] Embed Pods Frameworks */ = {
+		755AF3A17DFF0A0E4262D5DB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TimehopChallengeTests/Pods-TimehopChallengeTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TimehopChallengeTests/Pods-TimehopChallengeTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TimehopChallengeTests/Pods-TimehopChallengeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		90561B4E002070E9C580E811 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -581,6 +502,7 @@
 				EB7E32EC266282D900B8CC10 /* Story.swift in Sources */,
 				EB5F4AD726642B66007D189B /* String+Extension.swift in Sources */,
 				EB7A4993266AB29100783EBE /* ImageCache.swift in Sources */,
+				EBB4EA93266CF1B6007076CF /* FileHelper.swift in Sources */,
 				EB7E32E62662827200B8CC10 /* Decodable+Extension.swift in Sources */,
 				EB5F4AC0266400D3007D189B /* SplashbaseAWSTarget.swift in Sources */,
 				EB9871422661AC1F0008EF45 /* SceneDelegate.swift in Sources */,
@@ -594,15 +516,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB9871572661AC200008EF45 /* TimehopChallengeTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EB9871592661AC200008EF45 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EB9871622661AC200008EF45 /* TimehopChallengeUITests.swift in Sources */,
+				EBC1AFA9266BA9D500A05E06 /* MainViewModelSpec.swift in Sources */,
+				EBC1B022266BF1E500A05E06 /* ImageCacheMock.swift in Sources */,
+				EBC1B03B266C367400A05E06 /* RepositorySpec.swift in Sources */,
+				EBB4EA9B266CFC78007076CF /* FileHelperMock.swift in Sources */,
+				EBC1B01D266BEF5F00A05E06 /* RepositoryMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,11 +531,6 @@
 			isa = PBXTargetDependency;
 			target = EB98713B2661AC1F0008EF45 /* TimehopChallenge */;
 			targetProxy = EB9871532661AC200008EF45 /* PBXContainerItemProxy */;
-		};
-		EB98715F2661AC200008EF45 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = EB98713B2661AC1F0008EF45 /* TimehopChallenge */;
-			targetProxy = EB98715E2661AC200008EF45 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -751,7 +664,7 @@
 		};
 		EB9871672661AC200008EF45 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6588D4CF185E67486A1F97CB /* Pods-TimehopChallenge.debug.xcconfig */;
+			baseConfigurationReference = DC0B29DE5D7A1201B1B9F72E /* Pods-TimehopChallenge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -771,7 +684,7 @@
 		};
 		EB9871682661AC200008EF45 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C6D9D952EAD62479043FCAAA /* Pods-TimehopChallenge.release.xcconfig */;
+			baseConfigurationReference = EAC84D26BF637707E775F079 /* Pods-TimehopChallenge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -791,9 +704,9 @@
 		};
 		EB98716A2661AC200008EF45 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0109D2A359619DC7A544271 /* Pods-TimehopChallengeTests.debug.xcconfig */;
+			baseConfigurationReference = E093E4B91B81E1F1194E81A9 /* Pods-TimehopChallengeTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "${inherited}";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AMWCLA9HG3;
@@ -814,9 +727,9 @@
 		};
 		EB98716B2661AC200008EF45 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F9DD1992977F19CD1B8D554A /* Pods-TimehopChallengeTests.release.xcconfig */;
+			baseConfigurationReference = BFD9EBFE81AAEE618B9EC94F /* Pods-TimehopChallengeTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "${inherited}";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AMWCLA9HG3;
@@ -832,48 +745,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TimehopChallenge.app/TimehopChallenge";
-			};
-			name = Release;
-		};
-		EB98716D2661AC200008EF45 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 24C7D5EB79D84288A2D875C7 /* Pods-TimehopChallenge-TimehopChallengeUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AMWCLA9HG3;
-				INFOPLIST_FILE = TimehopChallengeUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = kalivos.TimehopChallengeUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TimehopChallenge;
-			};
-			name = Debug;
-		};
-		EB98716E2661AC200008EF45 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B2212AD9120F5B2E9B8738B3 /* Pods-TimehopChallenge-TimehopChallengeUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AMWCLA9HG3;
-				INFOPLIST_FILE = TimehopChallengeUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = kalivos.TimehopChallengeUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TimehopChallenge;
 			};
 			name = Release;
 		};
@@ -903,15 +774,6 @@
 			buildConfigurations = (
 				EB98716A2661AC200008EF45 /* Debug */,
 				EB98716B2661AC200008EF45 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		EB98716C2661AC200008EF45 /* Build configuration list for PBXNativeTarget "TimehopChallengeUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EB98716D2661AC200008EF45 /* Debug */,
-				EB98716E2661AC200008EF45 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

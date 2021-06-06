@@ -17,7 +17,7 @@ class MainViewController: UIViewController {
     private let playerView = PlayerView()
     
     private let viewModel: MainViewModel
-    private let imageCache: ImageCacheType
+    private let imageCache: ImageCache
     private let disposeBag = DisposeBag()
     
     private var isImageHidden: Bool = false {
@@ -27,7 +27,7 @@ class MainViewController: UIViewController {
         }
     }
     
-    init(viewModel: MainViewModel, imageCache: ImageCacheType) {
+    init(viewModel: MainViewModel, imageCache: ImageCache) {
         self.viewModel = viewModel
         self.imageCache = imageCache
         super.init(nibName: nil, bundle: nil)
@@ -51,7 +51,7 @@ class MainViewController: UIViewController {
                 guard let media = media else { return }
                 if media.type == .image {
                     self?.showImage(url: media.url)
-                } else {
+                } else if media.type == .video {
                     self?.playVideo(url: media.url)
                 }
             })

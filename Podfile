@@ -12,11 +12,10 @@ target 'TimehopChallenge' do
   target 'TimehopChallengeTests' do
     inherit! :search_paths
 
+    pod 'Nimble'
+    pod 'Quick'
     pod 'RxTest'
-  end
-
-  target 'TimehopChallengeUITests' do
-    # Pods for testing
+    pod 'RxBlocking'
   end
 
 end

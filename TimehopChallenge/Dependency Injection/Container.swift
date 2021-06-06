@@ -13,22 +13,36 @@ extension Container {
     static let shared: Container = {
         let container = Container()
         
-        container.register(ImageCacheType.self){ _ in
-            ImageCache()
+        container.register(ImageCache.self) { _ in
+            ImageCacheService()
         }.inObjectScope(.container)
         
-        container.register(Repository.self) { _ in
-            return RemoteRepository()
+        container.register(FileHelper.self) { _ in
+            FileHelperService()
+        }.inObjectScope(.container)
+        
+        container.register(TargetRepository.self) { _ in
+            StoriesRepository()
+        }
+        
+        container.register(AWSTargetRepository.self) { _ in
+            MediaRepository()
+        }
+        
+        container.register(Repository.self) { r in
+            RemoteRepository(targetRepository: r.resolve(TargetRepository.self)!,
+                             awsTargetRepository: r.resolve(AWSTargetRepository.self)!)
         }
         
         container.register(MainViewModel.self) { r in
-            return MainViewModel(repository: r.resolve(Repository.self)!,
-                                 imageCache: r.resolve(ImageCacheType.self)!)
+            MainViewModel(repository: r.resolve(Repository.self)!,
+                          imageCache: r.resolve(ImageCache.self)!,
+                          fileHelper: r.resolve(FileHelper.self)!)
         }
         
         container.register(MainViewController.self) { r in
-            return MainViewController(viewModel: r.resolve(MainViewModel.self)!,
-                                      imageCache: r.resolve(ImageCacheType.self)!)
+            MainViewController(viewModel: r.resolve(MainViewModel.self)!,
+                               imageCache: r.resolve(ImageCache.self)!)
         }
         
         return container

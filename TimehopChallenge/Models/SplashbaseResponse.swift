@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct SplashbaseResponse: Decodable {
+struct SplashbaseResponse: Codable {
     let images: [Story]
 }

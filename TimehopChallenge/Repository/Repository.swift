@@ -9,24 +9,30 @@ import Foundation
 import Moya
 import RxSwift
 
-protocol Repository {
-    
+protocol TargetRepository {
     func getStories() -> Single<SplashbaseResponse>
-    
-    func getMedia(largeUrlString: String) -> Single<Data>
-    
 }
 
-class RemoteRepository: Repository {
+protocol AWSTargetRepository {
+    func getMedia(largeUrlString: String) -> Single<Data>
+}
+
+class StoriesRepository: TargetRepository {
     
     let splashTarget = MoyaProvider<SplashbaseTarget>()
-    let splashAWSTarget = MoyaProvider<SplashbaseAWSTarget>()
-        
+    
     func getStories() -> Single<SplashbaseResponse> {
         splashTarget.rx
             .request(.getStories)
             .map(SplashbaseResponse.self)
+            //.map { $0.images }
     }
+    
+}
+
+class MediaRepository: AWSTargetRepository {
+    
+    let splashAWSTarget = MoyaProvider<SplashbaseAWSTarget>()
     
     func getMedia(largeUrlString: String) -> Single<Data> {
         return Single<Data>.create { [weak self] single in
@@ -44,6 +50,32 @@ class RemoteRepository: Repository {
                 disposable?.cancel()
             }
         }
+    }
+    
+}
+
+protocol Repository: TargetRepository, AWSTargetRepository {
+    init(targetRepository: TargetRepository,
+         awsTargetRepository: AWSTargetRepository)
+}
+
+class RemoteRepository: Repository {
+    
+    let targetRepository: TargetRepository
+    let awsTargetRepository: AWSTargetRepository
+    
+    required init(targetRepository: TargetRepository,
+         awsTargetRepository: AWSTargetRepository) {
+        self.targetRepository = targetRepository
+        self.awsTargetRepository = awsTargetRepository
+    }
+    
+    func getStories() -> Single<SplashbaseResponse> {
+        return targetRepository.getStories()
+    }
+    
+    func getMedia(largeUrlString: String) -> Single<Data> {
+        return awsTargetRepository.getMedia(largeUrlString: largeUrlString)
     }
     
 }

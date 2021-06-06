@@ -10,6 +10,7 @@ import Foundation
 enum MediaType {
     case image
     case video
+    case undefined
 }
 
 struct Media: Hashable {

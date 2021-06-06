@@ -7,11 +7,29 @@
 
 import Foundation
 
-struct Story: Decodable {
+struct Story {
     let id: Int
     let url: URL?
     let largeUrl: URL?
     let sourceId: Int?
+    
+    init(id: Int, url: URL?, largeUrl: URL?, sourceId: Int?) {
+        self.id = id
+        self.url = url
+        self.largeUrl = largeUrl
+        self.sourceId = sourceId
+    }
+}
+
+extension Story: Equatable {
+    
+    static func ==(lhs: Story, rhs: Story) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+}
+
+extension Story: Codable {
     
     enum CodingKeys: String, CodingKey {
         case id

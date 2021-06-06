@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-protocol ImageCacheType {
+protocol ImageCache {
     
     func saveImage(image: UIImage, key: String)
     
@@ -16,7 +16,7 @@ protocol ImageCacheType {
     
 }
 
-final class ImageCache: ImageCacheType {
+final class ImageCacheService: ImageCache {
     
     private let imageCache = NSCache<NSString, UIImage>()
     
