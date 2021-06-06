@@ -13,6 +13,13 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var errorView: UIView!
+    @IBOutlet weak var tryAgainLabel: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    private var tapGesture: UITapGestureRecognizer!
+    private var longPressGesture: UILongPressGestureRecognizer!
+    private var tryAgainTapGesture: UITapGestureRecognizer!
     
     private let playerView = PlayerView()
     
@@ -42,6 +49,19 @@ class MainViewController: UIViewController {
         setupPlayerView()
         setupGestures()
         
+        viewModel.isFetching
+            .drive(activityIndicator.rx.isAnimating)
+            .disposed(by: disposeBag)
+        
+        viewModel.hasError
+            .drive { [weak self] hasError in
+                self?.errorView.isHidden = !hasError
+                self?.tryAgainTapGesture.isEnabled = hasError
+                self?.tapGesture.isEnabled = !hasError
+                self?.longPressGesture.isEnabled = !hasError
+            }
+            .disposed(by: disposeBag)
+        
         viewModel.media
             .skip(1)
             //.debug()
@@ -57,7 +77,7 @@ class MainViewController: UIViewController {
             })
             .disposed(by: disposeBag)
 
-        viewModel.getStories()
+        loadStories()
     }
     
     private func setupPlayerView() {
@@ -68,18 +88,22 @@ class MainViewController: UIViewController {
     }
     
     private func setupGestures() {
-        let tapGesture = UITapGestureRecognizer(target: self,
-                                                action: #selector(didTap(_:)))
+        tapGesture = UITapGestureRecognizer(target: self,
+                                            action: #selector(didTap(_:)))
         tapGesture.delegate = self
         view.addGestureRecognizer(tapGesture)
         
-        let longPressGesture = UILongPressGestureRecognizer(target: self,
-                                                            action: #selector(didLongPress(_:)))
+        longPressGesture = UILongPressGestureRecognizer(target: self,
+                                                        action: #selector(didLongPress(_:)))
         longPressGesture.minimumPressDuration = 0
         longPressGesture.numberOfTouchesRequired = 1
         longPressGesture.numberOfTapsRequired = 0
         longPressGesture.delegate = self
         view.addGestureRecognizer(longPressGesture)
+        
+        tryAgainTapGesture = UITapGestureRecognizer(target: self,
+                                                    action: #selector(loadStories))
+        tryAgainLabel.addGestureRecognizer(tryAgainTapGesture)
     }
     
     @objc
@@ -122,6 +146,11 @@ class MainViewController: UIViewController {
     private func playVideo(url: URL) {
         isImageHidden = true
         playerView.prepareToPlay(withUrl: url)
+    }
+    
+    @objc
+    private func loadStories() {
+        viewModel.getStories()
     }
     
 }

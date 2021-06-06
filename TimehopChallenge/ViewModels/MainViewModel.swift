@@ -38,11 +38,12 @@ class MainViewModel {
     private let imageCache: ImageCache
     private let fileHelper: FileHelper
     private let disposeBag = DisposeBag()
+    
     private(set) var mediaSet = BehaviorRelay<OrderedSet<Media>>(value: [])
     private(set) var media = BehaviorRelay<Media?>(value: nil)
+
     private let _isFetching = BehaviorRelay<Bool>(value: false)
-    
-    private let queue = DispatchQueue(label: "mediaSet", attributes: .concurrent)
+    private let _hasError = BehaviorRelay<Bool>(value: false)
     
     init(repository: Repository, imageCache: ImageCache, fileHelper: FileHelper) {
         self.repository = repository
@@ -52,6 +53,10 @@ class MainViewModel {
     
     var isFetching: Driver<Bool> {
         _isFetching.asDriver()
+    }
+    
+    var hasError: Driver<Bool> {
+        _hasError.asDriver()
     }
     
     func getNextStory() {
@@ -79,7 +84,9 @@ class MainViewModel {
     }
     
     func getStories() {
+        _hasError.accept(false)
         _isFetching.accept(true)
+        
         repository.getStories()
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .userInitiated))
             .retry(3)
@@ -115,6 +122,7 @@ class MainViewModel {
                     strongSelf.media.accept(media)
                 }
             }, onError: { [weak self] error in
+                self?._hasError.accept(true)
                 self?._isFetching.accept(false)
             },
             onCompleted: { [weak self] in

@@ -25,7 +25,6 @@ class StoriesRepository: TargetRepository {
         splashTarget.rx
             .request(.getStories)
             .map(SplashbaseResponse.self)
-            //.map { $0.images }
     }
     
 }
