@@ -24,9 +24,19 @@ class StoriesRepository: TargetRepository {
     func getStories() -> Single<SplashbaseResponse> {
         splashTarget.rx
             .request(.getStories)
+            .map { response in
+                let ogJson =  try JSONSerialization.jsonObject(with: response.data, options: []) as! [[String:Any]]
+                let data = try JSONSerialization.data(withJSONObject: ogJson[0], options: .prettyPrinted)
+                return Response(
+                    statusCode: response.statusCode,
+                    data: data,
+                    request: response.request,
+                    response: response.response
+                )
+            }
             .map(SplashbaseResponse.self)
     }
-    
+        
 }
 
 class MediaRepository: AWSTargetRepository {

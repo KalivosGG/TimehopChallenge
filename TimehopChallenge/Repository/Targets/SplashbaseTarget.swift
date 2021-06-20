@@ -15,11 +15,11 @@ enum SplashbaseTarget {
 extension SplashbaseTarget: TargetType {
     
     var baseURL: URL {
-        return URL(string: "http://www.splashbase.co")!
+        return URL(string: "https://60c90de17dafc90017ffc0bd.mockapi.io")!
     }
     
     var path: String {
-        return "/api/v1/images/latest"
+        return "/splashbase/images"
     }
     
     var method: Moya.Method {

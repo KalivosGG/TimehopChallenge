@@ -92,7 +92,7 @@
                 <constraint firstItem="TIR-DU-eM9" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="rJX-8h-pDI"/>
                 <constraint firstItem="hZu-zJ-Zaq" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ycr-Yf-krl"/>
             </constraints>
-            <point key="canvasLocation" x="135" y="96"/>
+            <point key="canvasLocation" x="134.78260869565219" y="95.758928571428569"/>
         </view>
     </objects>
     <resources>

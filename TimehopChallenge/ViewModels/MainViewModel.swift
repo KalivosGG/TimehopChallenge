@@ -93,7 +93,6 @@ class MainViewModel {
             .map { $0.images }
             //.debug()
             
-            
             //Map observable of array to array of observables
             .asObservable()
             .flatMap { Observable.from($0) }
